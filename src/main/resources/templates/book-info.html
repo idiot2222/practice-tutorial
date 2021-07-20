@@ -1,0 +1,21 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Book info</title>
+  </head>
+
+  <body>
+    <h1 th:text="${book.title} + '의 정보'"></h1>
+    <ul>
+      <li th:text="'책 제목 : ' + ${book.title}"></li>
+      <li th:text="'책 저자 : ' + ${book.author}"></li>
+      <li th:text="'책장 층 : ' + ${book.bookshelf.floor}"></li>
+      <li><button><a th:href="@{/book/update/{id}(id=${book.id})}">수정</a></button></li>
+      <li><button><a th:href="@{/book/delete/{id}(id=${book.id})}">삭제</a></button></li>
+    </ul>
+  </body>
+
+</html>
